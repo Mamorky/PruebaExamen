@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:title="@string/menu_ordenar_por_nombre"
+        android:id="@+id/action_orden_nombre"
+        app:showAsAction="never"/>
+    <item android:title="@string/menu_ordenar_por_fecha"
+        android:id="@+id/action_orden_fecha"
+        app:showAsAction="never"/>
+</menu>

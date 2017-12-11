@@ -9,5 +9,7 @@ import java.util.ArrayList;
  */
 
 public interface ListInteractor {
-    ArrayList<Producto> searchProduct();
+    void searchProduct(ListInteractorImp.OnLoadSucess onLoadSucess);
+    Producto searchProduct(int pos);
+    void deleteProducto(Producto producto);
 }

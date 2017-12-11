@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">PruebaExamen</string>
+    <string name="delete_context">Eliminar</string>
+    <string name="Borrar">\@string/btn_borrar</string>
+    <string name="btn_Cancel">Cancelar</string>
+    <string name="btn_borrar">Borrar</string>
+    <string name="menu_ordenar_por_nombre">Ordenar por Nombre</string>
+    <string name="menu_ordenar_por_fecha">Ordenar por Fecha</string>
 </resources>

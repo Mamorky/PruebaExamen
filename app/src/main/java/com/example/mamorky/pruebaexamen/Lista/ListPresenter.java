@@ -1,5 +1,6 @@
 package com.example.mamorky.pruebaexamen.Lista;
 
+import com.example.mamorky.pruebaexamen.adapter.ProductoAdapter;
 import com.example.mamorky.pruebaexamen.pojo.Producto;
 
 import java.util.ArrayList;
@@ -10,5 +11,7 @@ import java.util.ArrayList;
 
 public interface ListPresenter {
      void loadProductos();
-     ArrayList<Producto> searchPersonas();
+     Producto searchPersona(int pos);
+     void deleteProducto(Producto producto);
+     void orderProductos(String orden, ProductoAdapter adapter);
 }

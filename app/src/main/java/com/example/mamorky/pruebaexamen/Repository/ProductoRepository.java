@@ -46,4 +46,21 @@ public class ProductoRepository {
     public ArrayList<Producto> getProductos(){
         return productos;
     }
+
+    public int getLastId(){
+        return productos.size();
+    }
+
+    public void editProduct(Producto producto,String nombre){
+        for (int i = 0; i < productos.size(); i++) {
+            if(productos.get(i).getNombre().equals(producto.getNombre())){
+                productos.get(i).setNombre(nombre);
+                return;
+            }
+        }
+    }
+
+    public void deleteProducto(Producto producto){
+        productos.remove(producto);
+    }
 }

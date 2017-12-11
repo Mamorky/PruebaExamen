@@ -1,12 +1,16 @@
 package com.example.mamorky.pruebaexamen.pojo;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.support.annotation.NonNull;
+
 import java.util.Date;
 
 /**
  * Created by mamorky on 10/12/17.
  */
 
-public class Producto {
+public class Producto implements Parcelable,Comparable<Producto> {
     private int id;
     private Date fecha;
     private String Nombre;
@@ -16,6 +20,23 @@ public class Producto {
         this.fecha = fecha;
         Nombre = nombre;
     }
+
+    protected Producto(Parcel in) {
+        id = in.readInt();
+        Nombre = in.readString();
+    }
+
+    public static final Creator<Producto> CREATOR = new Creator<Producto>() {
+        @Override
+        public Producto createFromParcel(Parcel in) {
+            return new Producto(in);
+        }
+
+        @Override
+        public Producto[] newArray(int size) {
+            return new Producto[size];
+        }
+    };
 
     public int getId() {
         return id;
@@ -44,5 +65,22 @@ public class Producto {
     @Override
     public String toString() {
         return super.toString();
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeString(Nombre);
+        dest.writeLong(fecha.getTime());
+    }
+
+    @Override
+    public int compareTo(@NonNull Producto o) {
+        return this.getNombre().compareTo(o.getNombre());
     }
 }
